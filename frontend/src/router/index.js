@@ -2,8 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import MainNavbar from "@/layout/MainNavbar.vue";
+import MenuDirectory from "@/layout/MenuDirectory.vue";
 import MainFooter from "@/layout/MainFooter.vue";
 import Index from "@/views/Index.vue";
+import IndexSeller from "@/views/IndexSeller.vue";
 
 Vue.use(VueRouter)
 
@@ -29,6 +31,15 @@ Vue.use(VueRouter)
     path: "/components",
     name: "Index",
     components: { default: Index, header: MainNavbar, footer: MainFooter },
+    props: {
+      header: { colorOnScroll: 400 },
+      footer: { backgroundColor: "black" }
+    }
+  },
+  {
+    path: "/sellerview",
+    name: "Seller",
+    components: { default: IndexSeller, header: MenuDirectory, footer: MainFooter },
     props: {
       header: { colorOnScroll: 400 },
       footer: { backgroundColor: "black" }
