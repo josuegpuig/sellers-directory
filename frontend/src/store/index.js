@@ -5,8 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    logged_in: false,
+  },
+  getters: { 
+    loggedIn: state => {
+      return state.model_login.connected;
+    }, 
   },
   mutations: {
+    setLogin(state, login) {
+      state.logged_in = login;
+    },
   },
   actions: {
   },
