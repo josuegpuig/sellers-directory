@@ -45,6 +45,19 @@ Vue.use(VueRouter)
       footer: { backgroundColor: "black" }
     }
   },
+  {
+    path: "/login",
+    name: "Login",
+    components: { 
+      default: () => import(/* webpackChunkName: "login" */ '../views/Login.vue'), 
+      header: MenuDirectory, 
+      footer: MainFooter 
+    },
+    props: {
+      header: { type: "dark", initialTransparent: false },
+      footer: { backgroundColor: "black" }
+    }
+  },
 ]
 
 const router = new VueRouter({

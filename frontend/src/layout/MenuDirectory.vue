@@ -2,8 +2,8 @@
   <md-toolbar
     id="toolbar"
     md-elevation="0"
-    class="md-transparent md-absolute"
-    :class="extraNavClasses"
+    class="md-absolute"
+    :class="{'md-transparent': initialTransparent, ['md-'+type]: !initialTransparent, extraNavClasses}"
     :color-on-scroll="colorOnScroll"
   >
     <div class="md-toolbar-row md-collapse-lateral">
@@ -190,14 +190,19 @@ export default {
           "danger",
           "success",
           "warning",
-          "info"
+          "info",
+          "dark"
         ].includes(value);
       }
     },
     colorOnScroll: {
       type: Number,
       default: 0
-    }
+    },
+    initialTransparent: {
+      type: Boolean,
+      default: true
+    },
   },
   data() {
     return {
